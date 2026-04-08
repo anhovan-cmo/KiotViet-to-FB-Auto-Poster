@@ -1,0 +1,5 @@
+{
+  "name": "KiotViet to Facebook Sync",
+  "description": "Fetch products from KiotViet and post them to Facebook Pages.",
+  "requestFramePermissions": []
+}

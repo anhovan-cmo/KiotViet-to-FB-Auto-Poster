@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "KiotViet to FB Auto Poster",
+  "version": "1.1",
+  "description": "Tự động đăng bài lên Facebook từ KiotViet thông qua Web App",
+  "permissions": ["tabs", "storage", "scripting"],
+  "host_permissions": [
+    "https://*.facebook.com/*",
+    "http://localhost:3000/*",
+    "https://*.run.app/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://localhost:3000/*", "https://*.run.app/*"],
+      "js": ["content_app.js"],
+      "all_frames": true
+    },
+    {
+      "matches": ["https://*.facebook.com/*"],
+      "js": ["content_fb.js"],
+      "all_frames": true
+    }
+  ],
+  "action": {
+    "default_title": "KiotViet to FB Auto Poster"
+  }
+}
